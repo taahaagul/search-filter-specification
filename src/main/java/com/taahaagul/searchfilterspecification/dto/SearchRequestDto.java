@@ -11,7 +11,8 @@ public class SearchRequestDto {
     String value;
     Operation operation;
     String joinTable;
-
+    private boolean formatDate;
+    private boolean formatBoolean;
 
     public enum Operation{
         EQUAL,

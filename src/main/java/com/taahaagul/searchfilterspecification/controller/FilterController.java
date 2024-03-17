@@ -2,7 +2,7 @@ package com.taahaagul.searchfilterspecification.controller;
 
 import com.taahaagul.searchfilterspecification.dto.RequestDto;
 import com.taahaagul.searchfilterspecification.entity.Student;
-import com.taahaagul.searchfilterspecification.service.FiltersSpecification;
+import com.taahaagul.searchfilterspecification.service.FiltersSpecificationService;
 import com.taahaagul.searchfilterspecification.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -18,7 +18,7 @@ import java.util.List;
 public class FilterController {
 
     private final StudentService studentService;
-    private final FiltersSpecification<Student> studentFiltersSpecification;
+    private final FiltersSpecificationService<Student> studentFiltersSpecificationService;
 
 
     @PostMapping("/specification")

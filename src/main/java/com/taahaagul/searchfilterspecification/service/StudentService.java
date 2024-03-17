@@ -16,20 +16,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentService {
 
-    private final FiltersSpecification<Student> studentFiltersSpecification;
+    private final FiltersSpecificationService<Student> studentFiltersSpecificationService;
     private final StudentRepository studentRepository;
 
 
     public List<Student> getStudents(RequestDto requestDto) {
         Specification<Student> searchSpecification =
-                studentFiltersSpecification
+                studentFiltersSpecificationService
                         .getSearchSpecification(requestDto.getSearchRequestDto(), requestDto.getGlobalOperator());
         return studentRepository.findAll(searchSpecification);
     }
 
     public Page<Student> getStudentsPage(RequestDto requestDto) {
         Specification<Student> searchSpecification =
-                studentFiltersSpecification
+                studentFiltersSpecificationService
                         .getSearchSpecification(requestDto.getSearchRequestDto(), requestDto.getGlobalOperator());
 
         Pageable pageable = new PageRequestDto().getPageable(requestDto.getPageDto());

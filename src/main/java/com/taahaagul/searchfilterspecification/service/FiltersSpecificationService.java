@@ -6,12 +6,14 @@ import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class FiltersSpecification<T> {
+public class FiltersSpecificationService<T> {
 
     public Specification<T> getSearchSpecification(
             List<SearchRequestDto> searchRequestDtos,
@@ -26,7 +28,12 @@ public class FiltersSpecification<T> {
                 switch (requestDto.getOperation()) {
 
                     case EQUAL:
-                        Predicate equal = criteriaBuilder.equal(root.get(requestDto.getColumn()), requestDto.getValue());
+                        Predicate equal = null;
+                        if (requestDto.isFormatBoolean()) {
+                            equal = criteriaBuilder.equal(root.get(requestDto.getColumn()), Boolean.parseBoolean(requestDto.getValue()));
+                        } else {
+                            equal = criteriaBuilder.equal(root.get(requestDto.getColumn()), requestDto.getValue());
+                        }
                         predicates.add(equal);
                         break;
 
@@ -42,12 +49,26 @@ public class FiltersSpecification<T> {
                         break;
 
                     case GREATER_THAN:
-                        Predicate greaterThan = criteriaBuilder.greaterThan(root.get(requestDto.getColumn()), requestDto.getValue());
+                        Predicate greaterThan = null;
+                        if (requestDto.isFormatDate()) {
+                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                            LocalDateTime parsedDate = LocalDateTime.parse(requestDto.getValue(), formatter);
+                            greaterThan = criteriaBuilder.greaterThan(root.get(requestDto.getColumn()), parsedDate);
+                        } else {
+                            greaterThan = criteriaBuilder.greaterThan(root.get(requestDto.getColumn()), requestDto.getValue());
+                        }
                         predicates.add(greaterThan);
                         break;
 
                     case LESS_THAN:
-                        Predicate lessThan = criteriaBuilder.lessThan(root.get(requestDto.getColumn()), requestDto.getValue());
+                        Predicate lessThan = null;
+                        if (requestDto.isFormatDate()) {
+                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                            LocalDateTime parsedDate = LocalDateTime.parse(requestDto.getValue(), formatter);
+                            lessThan = criteriaBuilder.lessThan(root.get(requestDto.getColumn()), parsedDate);
+                        } else {
+                            lessThan = criteriaBuilder.lessThan(root.get(requestDto.getColumn()), requestDto.getValue());
+                        }
                         predicates.add(lessThan);
                         break;
 
