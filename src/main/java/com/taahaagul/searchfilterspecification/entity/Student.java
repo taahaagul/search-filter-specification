@@ -1,4 +1,4 @@
-package com.taahaagul.searchfilter.entity;
+package com.taahaagul.searchfilterspecification.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

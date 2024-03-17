@@ -1,4 +1,4 @@
-package com.taahaagul.searchfilter.dto;
+package com.taahaagul.searchfilterspecification.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package com.taahaagul.searchfilter.repository;
+package com.taahaagul.searchfilterspecification.repository;
 
-import com.taahaagul.searchfilter.entity.Student;
+import com.taahaagul.searchfilterspecification.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

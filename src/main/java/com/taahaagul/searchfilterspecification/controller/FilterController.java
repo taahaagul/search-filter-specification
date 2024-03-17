@@ -1,9 +1,9 @@
-package com.taahaagul.searchfilter.controller;
+package com.taahaagul.searchfilterspecification.controller;
 
-import com.taahaagul.searchfilter.dto.RequestDto;
-import com.taahaagul.searchfilter.entity.Student;
-import com.taahaagul.searchfilter.service.FiltersSpecification;
-import com.taahaagul.searchfilter.service.StudentService;
+import com.taahaagul.searchfilterspecification.dto.RequestDto;
+import com.taahaagul.searchfilterspecification.entity.Student;
+import com.taahaagul.searchfilterspecification.service.FiltersSpecification;
+import com.taahaagul.searchfilterspecification.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;

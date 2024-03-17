@@ -1,9 +1,9 @@
-package com.taahaagul.searchfilter.service;
+package com.taahaagul.searchfilterspecification.service;
 
-import com.taahaagul.searchfilter.dto.PageRequestDto;
-import com.taahaagul.searchfilter.dto.RequestDto;
-import com.taahaagul.searchfilter.entity.Student;
-import com.taahaagul.searchfilter.repository.StudentRepository;
+import com.taahaagul.searchfilterspecification.dto.PageRequestDto;
+import com.taahaagul.searchfilterspecification.dto.RequestDto;
+import com.taahaagul.searchfilterspecification.entity.Student;
+import com.taahaagul.searchfilterspecification.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

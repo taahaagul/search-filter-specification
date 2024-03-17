@@ -1,7 +1,7 @@
-package com.taahaagul.searchfilter.service;
+package com.taahaagul.searchfilterspecification.service;
 
-import com.taahaagul.searchfilter.dto.RequestDto;
-import com.taahaagul.searchfilter.dto.SearchRequestDto;
+import com.taahaagul.searchfilterspecification.dto.RequestDto;
+import com.taahaagul.searchfilterspecification.dto.SearchRequestDto;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;

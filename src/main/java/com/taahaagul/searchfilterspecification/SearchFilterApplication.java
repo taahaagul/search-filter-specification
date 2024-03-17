@@ -1,4 +1,4 @@
-package com.taahaagul.searchfilter;
+package com.taahaagul.searchfilterspecification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

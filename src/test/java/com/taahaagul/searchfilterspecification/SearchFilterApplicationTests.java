@@ -1,4 +1,4 @@
-package com.taahaagul.searchfilter;
+package com.taahaagul.searchfilterspecification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
