@@ -22,18 +22,20 @@ public class RequestDto   {
 This is the request body for the search filter. It contains the searchRequestDto, globalOperator and pageDto.
 {
     "globalOperator": "AND",
-    "pageDto": {
+    "pageRequestDto": {
         "pageNo": 0,
-        "pageSize": 3,
+        "pageSize": 10,
         "sort": "ASC",
         "sortByColumn": "id"
     },
     "searchRequestDto": [
         {
         "column": "id",
-        "value": "1",
-        "joinTable": "address",
-        "operation": "GREATER_THAN"
+        "value": "4",
+        "joinTable": "car",
+        "operation": "JOIN",
+        "formatDate": false,
+        "formatBoolean": false
         }
     ]
 }
